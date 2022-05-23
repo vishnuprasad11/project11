@@ -1,12 +1,16 @@
-pipeline {
+ppipeline {
     agent any
     stages {
         stage('Build') {
             steps {
-                // Get code from a GitHub repository
-                git url: 'https://github.com/naiveskill/devops_cred.git', branch: 'main',
-                 credentialsId: 'github_creds'
-            }
+              checkout([$class: 'GitSCM', 
+                branches: [[name: '*/main']],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [[$class: 'CleanCheckout']],
+                submoduleCfg: [], 
+                userRemoteConfigs: [[url: 'https://github.com/naiveskill/devops.git']]])
+              sh "ls -ltr"
+          }
         }
     }
 }
