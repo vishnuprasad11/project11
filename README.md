@@ -8,7 +8,7 @@ ppipeline {
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [[$class: 'CleanCheckout']],
                 submoduleCfg: [], 
-                userRemoteConfigs: [[url: 'https://github.com/naiveskill/devops.git']]])
+                userRemoteConfigs: [[url: 'https://github.com/vishnuprasad11/project11.git']]])
               sh "ls -ltr"
           }
         }
